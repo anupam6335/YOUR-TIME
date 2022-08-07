@@ -199,6 +199,9 @@ li{
   .navbar.active{
     display: flex;
   }
+  #clockdiv{
+    margin:0px 10px 0px 10px;
+  }
 }
 /* Fun start */
 body{
