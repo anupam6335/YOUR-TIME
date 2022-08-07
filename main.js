@@ -13,6 +13,13 @@ setInterval(() => {
   second.style.transform = `rotateZ(${sec}deg)`;
 });
 
+// fun start here
+
+var audio = new Audio('./sound/bellSound.wav');
+
+function ringBell() {
+    audio.play();
+}
 
 var start= document.getElementById('start');
 var reset= document.getElementById('reset');
@@ -30,6 +37,7 @@ function timer(){
         h.value = 0;
         m.value = 0;
         s.value = 0;
+        ringBell();
     }else if(s.value != 0){
         var nS=s.value;
         if(s.value < 10){
@@ -52,6 +60,7 @@ function timer(){
             h.value = "0"+h.value;
         }
     }
+    
     return;
 }
 
