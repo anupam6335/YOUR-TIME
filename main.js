@@ -16,13 +16,14 @@ setInterval(() => {
 // fun start here
 
 var audio = new Audio('./sound/bellSound.wav');
-var audio2 = new Audio('./sound/sound2.wav');
+var audioTimeout = null;
 function ringBell() {
     audio.play();
 }
 
 var start= document.getElementById('start');
 var reset= document.getElementById('reset');
+var stop= document.getElementById('stop');
 
 var h = document.getElementById('hour');
 var m =document.getElementById('minute');
@@ -60,12 +61,14 @@ function timer(){
         }
     }
     
+    if(s.value==0){
+        ringBell();
+    }
     return;
 }
 
 function stopTimer(){
     clearInterval(startTimer)
-    ringBell2();
 }
 
 start.addEventListener('click', function(){
@@ -74,11 +77,20 @@ start.addEventListener('click', function(){
             timer();
         },1000)
     }
-    startInterval()
+    startInterval();
 })
 reset.addEventListener('click', function(){
     h.value = '00';
     m.value = '00';
     s.value = '00';
     stopTimer()
+})
+
+
+stop.addEventListener('click', function(){
+    h.value = '00';
+    m.value = '00';
+    s.value = '00';
+    stopTimer()
+    audio.pause();
 })
