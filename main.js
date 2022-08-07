@@ -32,10 +32,10 @@ function timer(){
         s.value = 0;
     }else if(s.value != 0){
         var nS=s.value;
-        s.value--
         if(s.value < 10){
             s.value = "0"+s.value;
         }
+        s.value--
     }else if(m.value!=0 && s.value==0){
         s.value = 59;  
         var nM= m.value; 
