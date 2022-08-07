@@ -16,7 +16,7 @@ setInterval(() => {
 // fun start here
 
 var audio = new Audio('./sound/bellSound.wav');
-
+var audio2 = new Audio('./sound/sound2.wav');
 function ringBell() {
     audio.play();
 }
@@ -37,7 +37,6 @@ function timer(){
         h.value = 0;
         m.value = 0;
         s.value = 0;
-        ringBell();
     }else if(s.value != 0){
         var nS=s.value;
         if(s.value < 10){
@@ -66,6 +65,7 @@ function timer(){
 
 function stopTimer(){
     clearInterval(startTimer)
+    ringBell2();
 }
 
 start.addEventListener('click', function(){
