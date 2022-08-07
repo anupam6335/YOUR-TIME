@@ -19,6 +19,12 @@
             </div>
         </div>
 
+        <a class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+
         <nav class="navbar">
             <ul class="nav-area">
                 <li><a href="#" id="nav1">YourTime </a></li>
@@ -54,6 +60,15 @@
     </section>
     <script src="main.js"></script>
     <script>
+
+        // toggles 
+        const toggleButton = document.getElementsByClassName("toggle-button")[0];
+        const navbar = document.getElementsByClassName("navbar")[0];
+
+        toggleButton.addEventListener("click",() => {
+            navbar.classList.toggle("active");
+        })
+
 
         // const hour = document.getElementById('hr');
         // const minute = document.getElementById('min');
