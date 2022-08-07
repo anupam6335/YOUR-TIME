@@ -200,11 +200,6 @@ li{
     display: flex;
   }
 }
-@media(max-width:400px){
-  section #clockdiv{
-    margin:10px;
-  }
-}
 /* Fun start */
 body{
   text-align: center;
