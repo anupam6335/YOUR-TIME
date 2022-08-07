@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fd0;
+  /* position: absolute; */
+  height: 70vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.container {
+  margin: 5px 0px 0px 10px;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 15px 15px 30px #665800, -15px -15px 30px #ffff00;
+  cursor: pointer;
+}
+
+.clock {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  background: url("./img/clock2.png");
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: inset 15px 15px 30px #665800, inset -15px -15px 30px #ffff00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.hr {
+  height: 10px;
+  width: 10px;
+}
+
+.min {
+  height: 20px;
+  width: 20px;
+}
+
+.sec {
+  height: 25px;
+  width: 25px;
+}
+
+.hr,
+.min,
+.sec {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.clock::before {
+  content: "";
+  height: 4px;
+  width: 4px;
+  background-color: #000;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.hr::before {
+  position: absolute;
+  content: "";
+  width: 1.7px;
+  height: 10px;
+  background-color: #000;
+  z-index: 10;
+  border-radius: 50%;
+}
+.min::before {
+  position: absolute;
+  content: "";
+  width: 1.3px;
+  height: 10px;
+  background-color: #000;
+  z-index: 11;
+  border-radius: 50%;
+}
+.sec::before {
+  position: absolute;
+  content: "";
+  width: 1.1px;
+  height: 15px;
+  background-color: #000;
+  z-index: 12;
+  border-radius: 50%;
+}
+
+.navbar{
+  display: flex;
+  justify-content:center;
+}
+
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+.navbar .nav-area{
+  display: flex;
+  justify-content:space-between;
+  padding: 10px 10px;
+  box-shadow:  15px 15px 30px #665800,  -15px -15px 30px #ffff00;
+  border-radius:15px;
+  margin-top: 10px;
+}
+
+.navbar .nav-area li{
+  border-radius:5px;
+  box-shadow: 15px 15px 30px #665800, -15px -15px 30px #ffff00;
+  margin-left: 20px;
+}
+.navbar .nav-area li a{
+  font-size:25px;
+  padding: 8px 8px;
+  letter-spacing:1.1px;
+  color: black;
+}
+.navbar .nav-area li a:hover,
+.btn button:hover{
+  color:#fff;
+  box-shadow: inset 15px 15px 30px #665800,inset -15px -15px 30px #ffff00;
+}
+.btn{
+  display:flex;
+  justify-content:flex-end;
+}
+.btn button{
+  font-weight: 700;
+  font-size:15px;
+  padding: 5px;
+  margin-top:-55px;
+  margin-right:20px ;
+  border-radius:50%;
+  background:#ffff006d;
+  box-shadow: 15px 15px 30px #665800, -15px -15px 30px #ffff00;
+  border: 1px solid #ffff007c;
+  cursor: pointer;
+
+}
+
+
+/* Fun start */
+body{
+  text-align: center;
+  font-weight: bold;
+}
+
+
+#clockdiv{
+  margin: 145px 0px 20px;
+  font-family: sans-serif;
+  color: #000;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 55px;
+  cursor: pointer;
+}
+
+#clockdiv > div{
+  padding: 50px;
+  box-shadow: 15px 15px 30px #665800, -15px -15px 30px #ffff00;
+  display: inline-block;
+  border-radius:20px;
+}
+
+#clockdiv div > span{
+  padding: 65px;
+  border-radius: 3px;
+  box-shadow: inset 15px 15px 30px #665800,inset -15px -15px 30px #ffff00;
+  display: inline-block;
+  border-radius:10px;
+}
+
+.smalltext{
+  margin-top: 20px;
+  padding-top: 5px;
+  font-size: 25px;
+}
+
+section .btn{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:40px;
+  font-size:25px;
+  
+}
+
+section .btn .btn1 ,.btn2, .btn3{
+    margin-right:20px;
+    box-shadow:  15px 15px 30px #665800, -15px -15px 30px #ffff00;
+    cursor: pointer;
+}
+
+section .btn .btn1:hover ,.btn2:hover, .btn3:hover{
+  box-shadow: inset 15px 15px 30px #665800, inset -15px -15px 30px #ffff00;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourTime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="clock">
+                <div class="hr" id="hr"></div>
+                <div class="min" id="min"></div>
+                <div class="sec" id="sec"></div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <ul class="nav-area">
+                <li><a href="#" id="nav1">TimeTable </a></li>
+                <li><a href="#" id="nav2">FocusTime </a></li>
+                <li><a href="#" id="na3">Blog</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn"><button>Sign Up</button></a>
+
+    </header>
+    <section>
+        <div id="clockdiv">
+            <div>
+                <span class="days"></span>
+                <div class="smalltext">Days</div>
+            </div>
+            <div>
+                <span class="hours"></span>
+                <div class="smalltext">Hours</div>
+            </div>
+            <div>
+                <span class="minutes"></span>
+                <div class="smalltext">Minutes</div>
+            </div>
+            <div>
+                <span class="seconds"></span>
+                <div class="smalltext">Seconds</div>
+            </div>
+        </div>
+        <div class="btn">
+            <div class="btn1">Start</div>
+            <div class="btn2">Stop</div>
+            <div class="btn3">Reset</div>
+        </div>
+    </section>
+    <script>
+
+        const hour = document.getElementById('hr');
+        const minute = document.getElementById('min');
+        const second = document.getElementById('sec');
+
+
+        setInterval(() => {
+            let toDay = new Date();
+            let hr = toDay.getHours() * 30;
+            let min = toDay.getMinutes() * 6;
+            let sec = toDay.getSeconds() * 6;
+
+            hour.style.transform = `rotateZ(${(hr) + (min / 12)}deg)`;
+            minute.style.transform = `rotateZ(${min}deg)`;
+            second.style.transform = `rotateZ(${sec}deg)`;
+        })
+
+
+
+        // fun start
+        function getTimeRemaining(endtime) {
+            var t = Date.parse(endtime) - Date.parse(new Date()); // get total difference in seconds
+            var seconds = Math.floor((t / 1000) % 60); // convert total seconds to number of seconds by diving total seconds by number of seconds remaining after days,hours, and minutes are account for
+            var minutes = Math.floor((t / 1000 / 60) % 60); // convert total seconds to number of minutes by diving total seconds by number of minutes remaining after days and hours are account for
+            var hours = Math.floor((t / (1000 * 60 * 60)) % 24); // convert total seconds to number of hours by diving total seconds by number of hours remaining after days are accounted for 
+            var days = Math.floor(t / (1000 * 60 * 60 * 24)); // convert total seconds to number of days by dividing total seconds by number of days in seconds
+            debugger;
+            return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
+        }
+
+        function initializeClock(id, endtime) {
+            var clock = document.getElementById(id); //first grab #clockdiv from div
+            var daysSpan = clock.querySelector('.days'); // grab the days span tag from the #clockdiv's div
+            var hoursSpan = clock.querySelector('.hours'); // grab the hours span tag from the #clockdiv's div
+            var minutesSpan = clock.querySelector('.minutes'); // grab the minutes span tag from the #clockdiv's div
+            var secondsSpan = clock.querySelector('.seconds'); // grab the seconds span tag from the #clockdiv's div
+
+            function updateClock() {
+                var t = getTimeRemaining(endtime); // calculate endtime date - current date and return a date object with days, hours, minutes, and seconds
+
+                daysSpan.innerHTML = t.days; //display number of days
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2); //use negative to slice from end of string. when number is 024, the 0 will be sliced, return 24. When number is 09, slice will return 09. 
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                if (t.total <= 0) {
+                    clearInterval(timeinterval);
+                }
+            }
+
+            updateClock();
+            var timeinterval = setInterval(updateClock, 1000);
+        }
+
+        //initialize today's date and then add days, hours, minutes, and seconds to it.
+        //set today as new Date
+        //add number of days (in seconds)
+        //parse the total number of seconds
+        //convert the total number of seconds into the new date
+        var deadline = new Date(Date.parse(new Date()) + 1 * 1 * 1 * 20 * 1000);
+
+        initializeClock('clockdiv', deadline); // grab needed HTML elements from the page, and add the date from which the timer begin its countdown
+    </script>
+</body>
+
+</html>
