@@ -35,9 +35,9 @@ var startTimer = null;
 
 function timer(){
     if(h.value == 0 && m.value == 0 && s.value == 0){
-        h.value = 0;
-        m.value = 0;
-        s.value = 0;
+        h.value = '00';
+        m.value = '00';
+        s.value = '00';
     }else if(s.value != 0){
         var nS=s.value;
         if(s.value < 10){
