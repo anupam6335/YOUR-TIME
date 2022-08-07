@@ -199,7 +199,9 @@ li{
   .navbar.active{
     display: flex;
   }
-  #clockdiv{
+}
+@media(max-width:400px){
+  section #clockdiv{
     margin:0px 10px 0px 10px;
   }
 }
