@@ -229,6 +229,7 @@ body {
   border-radius: 10px;
   border: 2px solid #ffff00;
   cursor: pointer;
+  text-align: center;
 }
 
 #clockdiv div > input:focus {

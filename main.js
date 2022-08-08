@@ -61,7 +61,7 @@ function timer(){
         }
     }
     
-    if(s.value==0){
+    if(h.value == 0 && m.value == 0 && s.value == 0){
         ringBell();
     }
     return;
